@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="this is operating system build by HTML5 and more langague Web , this project is free and open source for anyone">
+	<meta name="author" content="Sadik Fattah & Mohssine Aboutaj">
+	<link rel="shortcut icon" type="image/x-icon" href="img/mgm_os_logo.svg" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/mp3.css">
+	<script type="text/javascript" src="lib_js/jquery_mp3.js"></script>
+	<!--<script type="text/javascript" src="app/background.js"></script>-->
+	<script> 
+title = "Mgm Os => Sadik Fattah || Mohssine Aboutaj :)   ";
+position = 0;
+function scrolltitle() {
+    document.title = title.substring(position, title.length) + title.substring(0, position); 
+    position++;
+    if (position > title.length) position = 0;
+    titleScroll = window.setTimeout(scrolltitle,70);
+}
+scrolltitle();
+</script>
+</head>
+<body>
+<div class="header" onmouseover="document.getElementById('hidebar').style.display = 'block';" onmouseleave="document.getElementById('hidebar').style.display = 'none';" ></div>
+<div id="hidebar">
+    <ul id="menu">
+		<li><a id="internet"><img src="./icon/Browser.png"></a></li>
+		<li><a id="photo"><img src="./icon/Pictures.png"></a></li>
+		<li><a id="files"><img src="./icon/File.png"></a></li>
+		<li><a id="mp4"><img src="./icon/mp-3.png"></a></li>
+		<li><a id="maps"><img src="./icon/Maps.png"></a></li>
+		<li><a id="calculator"><img src="./icon/Tools.png"></a></li>
+		<li><a id="game"><img src="./icon/Game.png"></a></li>
+		<li><a id="setting"><img src="./icon/Settings.png"></a></li>
+		<li><a id="webcam"><img src="./icon/webcam.png"></a></li>
+	</ul>
+</div>
+
+<div class="desktop">
+<div id="move" >
+	<img src="img/thispc.png" /><br />
+	<span>Computer</span>
+</div>
+<script src="app/moving.js"></script>
+<div id="mp3">
+	<img class="close" src="img/close.png" onclick="document.getElementById('mp3').style.display = 'none';">
+	<img src="" alt="" id="cover_url">
+<div class="player-holder">
+	<div class="player">
+		<div class="player-background">
+			<div class="pie spinner"></div>
+			<div class="pie filler"></div>
+			<div class="mask"></div>
+		</div>
+		<a href="#" class="action" title="play/pause">
+			<i class="icon-play"></i>
+			<i class="icon-pause"></i>
+		</a>
+	</div>
+	<div class="controls">
+		<a href="#" class="volume-show" title="Show Volume">
+			<i class="icon-volume-up-1"></i>
+		</a>
+		 <a href="#" class="playlist-show" title="Show Playlist">
+			<i class="icon-note"></i>
+		</a>
+		<div class="volume-holder">
+			<input id="volume" type="range" min="0" max="1" step="0.1" value="0.8" class="volume">
+			<a href="#" class="volume-icon normal" id="mute">
+				<i class="icon-volume-off-1"></i>
+				<i class="icon-volume-up-1"></i>
+			</a>
+		</div>
+		<div class="playlist-holder">
+			<div class="playlist-header">
+				<h4>My Playlist</h4>
+				<input id="fileInput" class="upload-list" type="file" webkitdirectory="" directory="">
+			</div>
+			<ul class="playlist">
+			</ul>
+			<a href="#" class="shuffle" title="Shuffle">
+				<i class="icon-shuffle"></i>
+			</a>
+			<a href="#" class="repeat" title="Repeat">
+				<i class="icon-repeat"></i>
+			</a>
+		</div>
+	 </div>
+	<!--Player bottom shadow -->
+	<div class="player-shadow"></div>
+	<div class="background-shadow"></div>
+</div>
+
+<audio id="player"></audio>
+</div>
+
+<!--
+<img class="close" src="img/close.png" onclick="document.getElementById('mp3').style.display = 'none';">
+<p style="font-family: Mo_Nowel; padding-left: 7em;color: white;">Load mp3 file</p>
+<input class="file" type="file" id="input"/>
+<audio id="sound" class="" controls autoplay></audio>-->
+<script src="app/mp_3.js"></script>
+<script src="app/Internet.js"></script>
+</div>
+<div id="startMenu" class="startMenu hide">
+	<input type="search" placeholder="&#xf002; Search file" autofocus />
+</div>
+<div class="calendar" >
+	<input type="date" id="calendar" autofocus />
+</div>
+
+</div>
+	<div id="footer">
+		<div id="start">
+			<img src="img/mgm_os_logo.svg" alt="Mgm Os Logo" class="fa fa-search" aria-hidden="true" onclick="document.getElementById('startMenu').style.display = 'block';" ondblclick="document.getElementById('startMenu').style.display = 'none';" />
+		</div>
+			<div id="battery">
+				<div id="battery-level" class="charging plugged"></div>
+				<div id="battery-knob"></div>
+			</div>
+			<div id="calendrier">
+				<i class="fa fa-calendar" id="calendarBtn"></i>
+			</div>
+			<div id="select_lang">
+				<select class="lang">
+					<option>EN</option>
+					<option>AR</option>
+					<option>FR</option>
+				</select>
+			  
+		</div>
+
+		 <div class="music" onclick="document.getElementById('mp3').style.display = 'block';">
+			<i class="fa fa-music" aria-hidden="true" ></i>
+		</div>	
+			<div id="status">
+			<img src="icon/yes_internet.png" id="yes_internet" style="height: 40px; width: 50px;">
+			<img src="icon/No_internet.png" id="No_internet" style="height: 40px; width: 50px; margin-left: -52px;">
+		 </div>
+		 <img src="icon/encrypt.png" alt="" class="encrypting_data"  onclick="let newWindow = open('encrypt.html','encrypting_data', 'width=800,height=500');">
+	
+		<p id="date"></p>
+		<script>
+			var d = new Date();
+			document.getElementById("date").innerHTML = d;
+			</script>
+
+	</div>
+		
+</body>
+</html>
